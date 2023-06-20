@@ -34,6 +34,7 @@ export const store = configureStore({
     contacts: contactsReducer,
     filter: filterReducer,
   },
+  middleware
 });
 
 
