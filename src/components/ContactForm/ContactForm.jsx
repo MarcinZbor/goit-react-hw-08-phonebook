@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './ContactForm.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { postContactOperation } from 'redux/operations';
-import { selectContacts } from 'redux/selectors';
+import { postContactOperation } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
 
 const ContactForm = () => {
   const contacts = useSelector(selectContacts);
@@ -12,14 +12,13 @@ const ContactForm = () => {
     event.preventDefault();
     const name = event.currentTarget.elements.name.value;
     const number = event.currentTarget.elements.number.value;
-    const newContact = { name, number};
-    contacts.some (contact => name === contact.name)
-    ? alert (`${name} is already in contacts.`)
-    : dispatch(postContactOperation(newContact));
-    event.currentTarget.elements.name.value = ""
-    event.currentTarget.elements.name.number = ""
-
-  }
+    const newContact = { name, number };
+    contacts.some(contact => name === contact.name)
+      ? alert(`${name} is already in contacts.`)
+      : dispatch(postContactOperation(newContact));
+    event.currentTarget.elements.name.value = '';
+    event.currentTarget.elements.name.number = '';
+  };
 
   return (
     <form className={styles.form} onSubmit={formSubmit}>

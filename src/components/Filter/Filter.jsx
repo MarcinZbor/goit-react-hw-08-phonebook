@@ -1,9 +1,8 @@
 import { useDispatch } from 'react-redux';
-import { setFilter } from 'redux/filterSlice';
+import { setFilter } from 'redux/contacts/filterSlice';
 import styles from './Filter.module.css';
 
 const Filter = () => {
-
   const dispatch = useDispatch();
 
   return (
@@ -18,6 +17,5 @@ const Filter = () => {
     </>
   );
 };
-
 
 export default Filter;

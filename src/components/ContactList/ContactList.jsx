@@ -1,9 +1,14 @@
 import { useSelector, useDispatch } from 'react-redux';
-import {  selectfilteredContacts, selectLoading } from 'redux/selectors';
+import {
+  selectfilteredContacts,
+  selectLoading,
+} from 'redux/contacts/selectors';
 import { useEffect } from 'react';
 import styles from './ContactList.module.css';
-import { getContactsOperation, deleteContactOperation } from 'redux/operations';
-
+import {
+  getContactsOperation,
+  deleteContactOperation,
+} from 'redux/contacts/operations';
 
 const ContactList = () => {
   // const contacts = useSelector(selectContacts);
@@ -11,9 +16,7 @@ const ContactList = () => {
   const loading = useSelector(selectLoading);
   const dispatch = useDispatch();
 
-
   const filteredContacts = useSelector(selectfilteredContacts);
-
 
   useEffect(() => {
     dispatch(getContactsOperation());
@@ -28,7 +31,10 @@ const ContactList = () => {
               <p className={styles.p}>
                 {name}: {phone}
               </p>
-              <button type="button" onClick={() => dispatch(deleteContactOperation(id))}>
+              <button
+                type="button"
+                onClick={() => dispatch(deleteContactOperation(id))}
+              >
                 Delete
               </button>
             </li>
