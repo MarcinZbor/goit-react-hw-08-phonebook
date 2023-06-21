@@ -1,17 +1,27 @@
 import { useDispatch } from 'react-redux';
+import { TextField, InputAdornment } from '@mui/material';
+import ContentPasteSearchOutlinedIcon from '@mui/icons-material/ContentPasteSearchOutlined';
 import { setFilter } from 'redux/contacts/filterSlice';
-import styles from './Filter.module.css';
 
 const Filter = () => {
   const dispatch = useDispatch();
 
   return (
     <>
-      <p className={styles.p}>Fined contacts by name</p>
-      <input
-        className={styles.input}
+      <TextField
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <ContentPasteSearchOutlinedIcon />
+            </InputAdornment>
+          ),
+        }}
         onChange={e => dispatch(setFilter(e))}
+        fullWidth
+        id="input-with-icon-textfield"
+        placeholder="Search by name"
         type="text"
+        variant="standard"
         name="filter"
       />
     </>
