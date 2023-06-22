@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
-  registeredOperation,
+ registeredOperation,
   logInOperation,
   logOutOperation,
   refreshUserOperation

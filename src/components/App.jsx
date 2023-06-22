@@ -1,5 +1,6 @@
-import React, { useEffect, lazy } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useEffect, lazy } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
