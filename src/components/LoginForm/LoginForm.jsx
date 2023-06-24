@@ -26,8 +26,8 @@ const LoginForm = () => {
 
 const onFormSubmit = e => {
     e.preventDefault()
-    const email = e.currentTarget.element.email.value;
-    const password = e.currentTarget.element.password.value;
+    const email = e.currentTarget.elements.email.value;
+    const password = e.currentTarget.elements.password.value;
     const userInfo = {email, password};
     dispatch(logInOperation(userInfo))
 }
