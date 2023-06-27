@@ -26,10 +26,10 @@ const ContactList = () => {
     <>
       <ul className={styles.list}>
         {filteredContacts.length !== 0 &&
-          filteredContacts.map(({ id, name, phone }) => (
+          filteredContacts.map(({ id, name, number }) => (
             <li key={id} className={styles.item}>
               <p className={styles.p}>
-                {name}: {phone}
+                {name}: {number}
               </p>
               <Button
               size="small"
