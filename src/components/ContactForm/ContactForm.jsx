@@ -17,7 +17,7 @@ const ContactForm = () => {
       ? alert(`${name} is already in contacts.`)
       : dispatch(postContactOperation(newContact));
     event.currentTarget.elements.name.value = '';
-    event.currentTarget.elements.name.number = '';
+    event.currentTarget.elements.name.phone = '';
   };
 
   return (
