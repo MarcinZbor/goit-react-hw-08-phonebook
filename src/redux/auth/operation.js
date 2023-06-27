@@ -26,10 +26,15 @@ export const registeredOperation = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
+      if (error.response && error.response.status === 11000) {
+        // User already exists
+        alert('Użytkownik już istnieje');
+      }
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
+
 /*
  * POST @ /users/login
  * body: { email, password }
