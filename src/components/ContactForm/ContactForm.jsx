@@ -11,13 +11,13 @@ const ContactForm = () => {
   const formSubmit = event => {
     event.preventDefault();
     const name = event.currentTarget.elements.name.value;
-    const number = event.currentTarget.elements.phone.value;
+    const number = event.currentTarget.elements.number.value;
     const newContact = { name, number };
     contacts.some(contact => name === contact.name)
       ? alert(`${name} is already in contacts.`)
       : dispatch(postContactOperation(newContact));
     event.currentTarget.elements.name.value = '';
-    event.currentTarget.elements.name.phone = '';
+    event.currentTarget.elements.name.number = '';
   };
 
   return (
@@ -40,7 +40,7 @@ const ContactForm = () => {
             label="Number"
             variant="standard"
             type="tel"
-            name="phone"
+            name="number"
           />
           <Button variant="contained" type="submit" sx={{ m: 1, width: 150 }}>
             Add contact
